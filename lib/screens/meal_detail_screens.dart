@@ -48,7 +48,7 @@ class MealDetailScreen extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            _createSectionTitle(context, 'Ingredientes'),
+            _createSectionTitle(context, 'Ingredients'),
             _createSectionContainer(
               ListView.builder(
                 itemCount: meal.ingredients.length,
@@ -66,7 +66,7 @@ class MealDetailScreen extends StatelessWidget {
                 },
               ),
             ),
-            _createSectionTitle(context, 'Passos'),
+            _createSectionTitle(context, 'Steps'),
             _createSectionContainer(ListView.builder(
               itemCount: meal.steps.length,
               itemBuilder: (ctx, index) {
@@ -74,7 +74,11 @@ class MealDetailScreen extends StatelessWidget {
                   children: [
                     ListTile(
                       leading: CircleAvatar(
-                        child: Text('${index + 1}'),
+                        backgroundColor: Colors.purple,
+                        child: Text(
+                          '${index + 1}',
+                          style: const TextStyle(color: Colors.white),
+                        ),
                       ),
                       title: Text(meal.steps[index]),
                     ),
@@ -87,7 +91,10 @@ class MealDetailScreen extends StatelessWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.favorite),
+        backgroundColor: Colors.purple,
+        child: const Icon(
+          Icons.favorite,
+        ),
         onPressed: () {
           Navigator.of(context).pop(meal.title);
         },
