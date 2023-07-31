@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-
-import '/screens/meal_detail_screens.dart';
-import '/screens/categories_meals_screens.dart';
-import '/screens/tabs_screens.dart';
-
+import 'screens/tabs_screens.dart';
+import 'screens/categories_meals_screens.dart';
+import 'screens/meal_detail_screens.dart';
+import 'screens/settings_screens.dart';
 import 'utils/app_routes.dart';
 
 void main() {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Vamos Cozinhar?',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.pink,
+          primary: Colors.purple,
           secondary: Colors.amber,
         ),
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
@@ -35,6 +34,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.HOME: (ctx) => const TabsScreen(),
         AppRoutes.CATEGORIES_MEALS: (ctx) => const CategoriesMealsScreen(),
         AppRoutes.MEAL_DETAIL: (ctx) => const MealDetailScreen(),
+        AppRoutes.SETTINGS: (ctx) => const SettingsScreen(),
       },
     );
   }
