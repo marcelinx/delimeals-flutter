@@ -20,6 +20,7 @@ class MainDrawer extends StatelessWidget {
       onTap: onTap,
     );
   }
+
   const MainDrawer({super.key});
 
   @override
@@ -34,7 +35,7 @@ class MainDrawer extends StatelessWidget {
             color: Theme.of(context).colorScheme.secondary,
             alignment: Alignment.bottomRight,
             child: Text(
-              'Vamos cozinhar?',
+              "Let's cook?",
               style: TextStyle(
                 fontWeight: FontWeight.w900,
                 fontSize: 30,
@@ -51,7 +52,8 @@ class MainDrawer extends StatelessWidget {
           _createItem(
             Icons.settings,
             'Settings',
-            () => Navigator.of(context).pushReplacementNamed(AppRoutes.SETTINGS),
+            () =>
+                Navigator.of(context).pushReplacementNamed(AppRoutes.SETTINGS),
           ),
         ],
       ),

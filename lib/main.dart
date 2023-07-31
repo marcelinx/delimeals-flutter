@@ -24,23 +24,22 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
   Settings settings = Settings();
   List<Meal> _availableMeals = dummyMeals;
 
   void _filterMeals(Settings settings) {
     setState(() {
       this.settings = settings;
-      
+
       _availableMeals = dummyMeals.where((meal) {
         final filterGluten = settings.isGlutenFree && !meal.isGlutenFree;
         final filterLactose = settings.isLactoseFree && !meal.isLactoseFree;
         final filterVegan = settings.isVegan && !meal.isVegan;
         final filterVegetarian = settings.isVegetarian && !meal.isVegetarian;
         return !filterGluten &&
-               !filterLactose &&
-               !filterVegan &&
-               !filterVegetarian;
+            !filterLactose &&
+            !filterVegan &&
+            !filterVegetarian;
       }).toList();
     });
   }
@@ -48,7 +47,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Vamos Cozinhar?',
+      debugShowCheckedModeBanner: false,
+      title: "let's cook?",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSwatch().copyWith(
           primary: Colors.purple,
@@ -65,9 +65,10 @@ class _MyAppState extends State<MyApp> {
       ),
       routes: {
         AppRoutes.HOME: (ctx) => const TabsScreen(),
-        AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(_availableMeals),
+        AppRoutes.CATEGORIES_MEALS: (ctx) =>
+            CategoriesMealsScreen(_availableMeals),
         AppRoutes.MEAL_DETAIL: (ctx) => const MealDetailScreen(),
-        AppRoutes.SETTINGS: (ctx) => SettingsScreen(settings ,_filterMeals),
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen(settings, _filterMeals),
       },
     );
   }
