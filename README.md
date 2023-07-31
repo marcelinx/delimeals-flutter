@@ -12,7 +12,7 @@ O Delimeal App é um aplicativo desenvolvido em Flutter que oferece uma variedad
 
 - Favoritos: Os usuários podem marcar suas receitas favoritas para acessá-las facilmente mais tarde.
 
-- Filyto: O aplicativo possui uma funcionalidade de filtro que permite aos usuários encontrar receitas específicas definindo filtros relacionadas.
+- Filtro: O aplicativo possui uma funcionalidade de filtro que permite aos usuários encontrar receitas específicas definindo filtros relacionadas.
 
 ## Instalação
 
